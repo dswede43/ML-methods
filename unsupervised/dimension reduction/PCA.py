@@ -21,14 +21,18 @@ df = pd.read_csv(dir + "data/palmerpenguins.csv")
 df = df.dropna() #remove NA values
 df = df.reset_index(drop = True) #reset the index
 
-#scale the continuous variables
+
+#Scale the continuous variables
+#---
 categorical_vars = ['species','island','sex','year'] #define the categorical variables
 scale = StandardScaler()
 df_scaled = scale.fit_transform(df.drop(categorical_vars, axis = 1))
 df_scaled = pd.DataFrame(df_scaled)
 df_scaled.columns = df.drop(categorical_vars, axis = 1).columns
 
-#run the PCA
+
+#Run the PCA
+#---
 pca = PCA(n_components = 2)
 principle_components = pca.fit_transform(df_scaled)
 pca_df = pd.DataFrame(principle_components)
