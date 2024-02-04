@@ -66,13 +66,13 @@ ys = np.array(pca_df['PC2'])
 
 #create the PCA biplot
 sns.scatterplot(x = 'PC1', y = 'PC2', data = pca_df,
-    hue = 'species',
-    palette = sns.color_palette('hls', 4),
+    hue = categorical_vars[0],
+    palette = sns.color_palette('hls', len(df[categorical_vars[0]].unique())),
     size = 1,
     alpha = 0.5)
 plt.xlabel(f"PC1 - {var[0] * 100:.2f}%")
 plt.ylabel(f"PC2 - {var[1] * 100:.2f}%")
-plt.title("PCA of Penguin characteristics coloured by species")
+plt.title(f"PCA of Penguin characteristics coloured by {categorical_vars[0]}")
 
 #add the feature vectors
 for i in range(len(feature_vectors)):
@@ -84,6 +84,6 @@ for i in range(len(feature_vectors)):
         feature_vectors.iloc[i,2], fontsize = 10)
 
 #save plot as pdf
-plt.savefig(dir + "unsupervised/dimension reduction/PCA_plot-penguin_species.pdf", format = 'pdf')
+plt.savefig(dir + "unsupervised/dimension reduction/PCA_biplot.pdf", format = 'pdf')
 
 plt.show()
