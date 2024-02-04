@@ -12,6 +12,9 @@ from sklearn.decomposition import PCA
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+#define global variables
+dep_variable = 'species'
+
 #load the data
 #This data contains information about the characteristics of Penguins
 #collected by Dr. Kristen Gorman in the Palmer station in Antartica.
@@ -66,13 +69,13 @@ ys = np.array(pca_df['PC2'])
 
 #create the PCA biplot
 sns.scatterplot(x = 'PC1', y = 'PC2', data = pca_df,
-    hue = categorical_vars[0],
+    hue = dep_variable,
     palette = sns.color_palette('hls', len(df[categorical_vars[0]].unique())),
     size = 1,
     alpha = 0.5)
 plt.xlabel(f"PC1 - {var[0] * 100:.2f}%")
 plt.ylabel(f"PC2 - {var[1] * 100:.2f}%")
-plt.title(f"PCA of Penguin characteristics coloured by {categorical_vars[0]}")
+plt.title(f"PCA of Penguin characteristics coloured by {dep_variable}")
 
 #add the feature vectors
 for i in range(len(feature_vectors)):
