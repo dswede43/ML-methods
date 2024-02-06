@@ -19,7 +19,7 @@ dep_variable = 'species' #dependent variable of interest
 #This data contains information about the characteristics of Penguins
 #collected by Dr. Kristen Gorman in the Palmer station in Antartica.
 #https://github.com/tidyverse/nycflights13?tab=readme-ov-file
-dir = "/home/dan/Nextcloud/Documents/Computers/Code/Github repos/ML methods/"
+dir = "/path/to/directory/"
 df = pd.read_csv(dir + "data/palmerpenguins.csv")
 df = df.dropna() #remove NA values
 df = df.reset_index(drop = True) #reset the index
