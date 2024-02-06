@@ -98,4 +98,4 @@ ax2.set_title(f"K-means clustering of penguins by {dep_variable}")
 plt.tight_layout
 plt.show()
 
-fig.savefig(dir + "unsupervised/clustering/k-means_player_height_weight.pdf", format = 'pdf')
+fig.savefig(dir + "unsupervised/clustering/k-means_clustering_results.pdf", format = 'pdf')
