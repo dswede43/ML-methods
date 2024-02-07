@@ -70,7 +70,7 @@ ys = np.array(pca_df['PC2'])
 #create the PCA biplot
 sns.scatterplot(x = 'PC1', y = 'PC2', data = pca_df,
     hue = dep_variable,
-    palette = sns.color_palette('hls', len(df[categorical_vars[0]].unique())),
+    palette = sns.color_palette('hls', len(df[dep_variable].unique())),
     size = 1,
     alpha = 0.5)
 plt.xlabel(f"PC1 - {var[0] * 100:.2f}%")
