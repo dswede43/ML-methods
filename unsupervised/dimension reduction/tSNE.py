@@ -18,7 +18,7 @@ dep_variable = 'species'
 #load the data
 #This data contains information about the characteristics of Penguins
 #collected by Dr. Kristen Gorman in the Palmer station in Antartica.
-#https://github.com/tidyverse/nycflights13?tab=readme-ov-file
+#https://github.com/allisonhorst/palmerpenguins
 dir = "/path/to/directory/"
 df = pd.read_csv(dir + "data/palmerpenguins.csv")
 df = df.dropna() #remove NA values
